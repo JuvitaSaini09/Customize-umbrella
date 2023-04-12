@@ -69,6 +69,9 @@ body{
 .umbrella-img{
   height:300px;
   width:350px;
+  opacity:1;
+  transition:opacity 1s linear;
+
 }
 .colors-list-container{
     display: flex;
