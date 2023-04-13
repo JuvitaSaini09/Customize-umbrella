@@ -74,6 +74,9 @@ upload_file_input.addEventListener("change", (e) => {
  {
   fa_times.style.display = "block";
   brand_logo.style.display = "block";
+  upload_logo_text.innerText=e.target.files[0].name;
+  upload_logo_text.style.fontSize = "18px";
+
  }
   brand_logo.src = URL.createObjectURL(e.target.files[0]);
 });
@@ -82,5 +85,7 @@ fa_times.addEventListener("click", () => {
   brand_logo.src = "";
   fa_times.style.display = "none";
   brand_logo.style.display = "none";
+  upload_logo_text.innerText="UPLOAD LOGO";
+  upload_logo_text.style.fontSize = "24px";
   console.log("hello")
 });
