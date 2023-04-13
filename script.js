@@ -36,13 +36,13 @@ let currentUmbrella = {
   src: "/asset/Blue umbrella.png",
 };
 
+umbrella_img.src = currentUmbrella.src;
 var uploaded_image = "";
 
 colors_btn[1].style.border = `4px solid ${allImagesDatabase[1].borderColor}`;
 fa_times.style.display = "none";
 brand_logo.style.display = "none";
 loader.style.display = "none";
-umbrella_img.src = currentUmbrella.src;
 
 function updateUmbrellaColor(indexOfSelectedColor) {
   currentUmbrella.color = allImagesDatabase[indexOfSelectedColor].color;
@@ -53,16 +53,20 @@ function updateUmbrellaColor(indexOfSelectedColor) {
       colors_btn[
         img
       ].style.border = `4px solid ${allImagesDatabase[img].borderColor}`;
+
       document.body.style.backgroundColor =
         allImagesDatabase[img].backgroundColor;
+
       upload_file_container.style.backgroundColor =
         allImagesDatabase[img].borderColor;
     } else {
       colors_btn[img].style.border = "none";
     }
   }
+
   umbrella_img.src = currentUmbrella.src;
-  umbrella_img.classList.add("test");
+  umbrella_img.classList.add("fade");
+  brand_logo.classList.add("fade");
 
   setTimeout(() => {
     loader.classList.add("rotate");
@@ -71,11 +75,13 @@ function updateUmbrellaColor(indexOfSelectedColor) {
 
   setTimeout(() => {
     loader.classList.remove("rotate");
-    umbrella_img.classList.remove("test");
+    umbrella_img.classList.remove("fade");
+    brand_logo.classList.remove("fade");
     loader.style.display = "none";
   }, 4000);
 }
 
+//Event listeners
 for (let i = 0; i < colors_btn.length; i++) {
   colors_btn[i].addEventListener("click", () => updateUmbrellaColor(i));
 }
