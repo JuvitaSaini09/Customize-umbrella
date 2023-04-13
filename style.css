@@ -59,7 +59,7 @@ body{
     background-color:var(--yellow-secondary) ;
 }
 .umbrella-img-container{
-
+   position: relative;
 }
 .font-h2{
     font-size: 24px;
@@ -111,6 +111,14 @@ body{
 
 label{
     cursor: pointer;
+}
+
+.brand-logo{
+    position: absolute;
+    bottom:2rem;
+    left:8rem;
+    height:2rem;
+    width:6rem;
 }
 
 
