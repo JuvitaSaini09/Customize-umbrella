@@ -79,7 +79,8 @@ upload_file_input.addEventListener("change", (e) => {
 });
 
 fa_times.addEventListener("click", () => {
+  brand_logo.src = "";
   fa_times.style.display = "none";
   brand_logo.style.display = "none";
-  brand_logo.src = "";
+  console.log("hello")
 });
