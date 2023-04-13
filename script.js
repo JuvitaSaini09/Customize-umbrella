@@ -4,7 +4,7 @@ const upload_file_input = document.querySelector("#upload-file-input");
 const upload_logo_text = document.querySelector(".upload-logo-text");
 const fa_times = document.querySelector(".fa-times");
 const upload_file_container = document.querySelector(".upload-file-container");
-const brand_logo=document.querySelector("#brand-logo");
+const brand_logo = document.querySelector("#brand-logo");
 
 const allImagesDatabase = [
   {
@@ -35,10 +35,11 @@ let currentUmbrella = {
   src: "/asset/Blue umbrella.png",
 };
 
-var uploaded_image="";
+var uploaded_image = "";
 
 colors_btn[1].style.border = `4px solid ${allImagesDatabase[1].borderColor}`;
-fa_times.style.display="none"
+fa_times.style.display = "none";
+brand_logo.style.display = "none";
 umbrella_img.src = currentUmbrella.src;
 
 function updateUmbrellaColor(indexOfSelectedColor) {
@@ -68,14 +69,17 @@ for (let i = 0; i < colors_btn.length; i++) {
   colors_btn[i].addEventListener("click", () => updateUmbrellaColor(i));
 }
 
-upload_file_input.addEventListener("change", e => {
-  fa_times.style.display="block"
-brand_logo.src=URL.createObjectURL(e.target.files[0])
+upload_file_input.addEventListener("change", (e) => {
+  if(brand_logo.src!=="")
+ {
+  fa_times.style.display = "block";
+  brand_logo.style.display = "block";
+ }
+  brand_logo.src = URL.createObjectURL(e.target.files[0]);
 });
 
-fa_times.addEventListener("click",()=>{
-  fa_times.style.display="none";
-  brand_logo.src=""
-})
-
-
+fa_times.addEventListener("click", () => {
+  fa_times.style.display = "none";
+  brand_logo.style.display = "none";
+  brand_logo.src = "";
+});
