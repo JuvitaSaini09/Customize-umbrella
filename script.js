@@ -12,7 +12,7 @@ const allImagesDatabase = [
     id: 0,
     src: "/asset/Pink umbrella.png",
     color: "pink",
-    borderColor: "#FF002B",
+    borderColor: "MediumVioletRed",
     backgroundColor: "#FDE0E5",
   },
   {
@@ -26,7 +26,7 @@ const allImagesDatabase = [
     id: 2,
     src: "/asset/Yello umbrella.png",
     color: "yellow",
-    borderColor: "brown",
+    borderColor: "#FEBE10",
     backgroundColor: "#FFFFBE",
   },
 ];
